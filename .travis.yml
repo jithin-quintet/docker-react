@@ -6,4 +6,4 @@ before_install:
   - docker -t nsjithin/docker-react -f Dockerfile.dev build .
 
 script:
-  - npm run test
+  - docker run -e CI=true nsjithin/docker-react npm run test -- --coverage
